@@ -1,0 +1,339 @@
+<!--
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: GameZone Arena - Portal de Games
+Aluno 1: João Pedro Pereira Martins - RA: 251530
+Aluno 2: Vinícius Nucci Galvão - RA: 252127
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone Arena - Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">GAME<span>ZONE</span></a>
+
+                <div class="d-flex align-items-center gap-2 order-lg-last">
+                    <button id="btnTema" class="btn-tema" title="Alternar tema">🌙</button>
+
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeria.html">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== SEÇÃO CARROSSEL ===== -->
+        <section class="carousel-section" aria-label="Destaques principais">
+            <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active"
+                        aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400&q=80"
+                            class="d-block w-100" alt="Setup gamer profissional com luzes RGB">
+                        <div class="carousel-caption d-block">
+                            <span class="badge-platform">Destaque da Semana</span>
+                            <h2>O Universo Gamer <br>em Um Só Lugar</h2>
+                            <p>Novidades, lançamentos, análises e as melhores comunidades para quem vive o mundo dos
+                                games.</p>
+                            <a href="galeria.html" class="btn-ver-jogo">Ver Galeria</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=1400&q=80"
+                            class="d-block w-100" alt="Controles e telas de jogos coloridos">
+                        <div class="carousel-caption d-block">
+                            <span class="badge-platform">Multiplayer</span>
+                            <h2>Jogue Com <br>o Mundo Todo</h2>
+                            <p>Encontre sua comunidade, forme seu time e domine os servidores nos maiores títulos do
+                                momento.</p>
+                            <a href="galeria.html" class="btn-ver-jogo">Explorar Jogos</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1592155931584-901ac15763e3?w=1400&q=80"
+                            class="d-block w-100" alt="Jogador com headset em torneio de e-sports">
+                        <div class="carousel-caption d-block">
+                            <span class="badge-platform">E-Sports</span>
+                            <h2>Esports na <br>Palma da Mão</h2>
+                            <p>Acompanhe torneios, resultados ao vivo e as notícias mais quentes do cenário competitivo
+                                mundial.</p>
+                            <a href="contato.html" class="btn-ver-jogo">Entre em Contato</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO APRESENTAÇÃO ===== -->
+        <section class="sec-apresentacao">
+            <div class="container">
+                <span class="sec-label">Bem-vindo à GameZone Arena</span>
+                <h1 class="sec-titulo">Seu Portal Definitivo de <span class="titulo-gradiente">Games</span></h1>
+                <p class="sec-subtitulo">
+                    A GameZone Arena é o hub central para gamers apaixonados. Aqui você encontra análises completas,
+                    lançamentos em primeira mão, dicas de gameplay e tudo que envolve a cultura gamer.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-item animado">
+                        <span class="stat-numero">500+</span>
+                        <span class="stat-label">Jogos Catalogados</span>
+                    </div>
+                    <div class="stat-item animado animado-delay-1">
+                        <span class="stat-numero">12K</span>
+                        <span class="stat-label">Membros Ativos</span>
+                    </div>
+                    <div class="stat-item animado animado-delay-2">
+                        <span class="stat-numero">98%</span>
+                        <span class="stat-label">Satisfação</span>
+                    </div>
+                    <div class="stat-item animado animado-delay-3">
+                        <span class="stat-numero">24/7</span>
+                        <span class="stat-label">Conteúdo Online</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO DESTAQUES / CARDS ===== -->
+        <section class="sec-destaques">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="sec-label">Seleção da Semana</span>
+                    <h2 class="sec-titulo">Jogos em <span class="titulo-gradiente">Destaque</span></h2>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <article class="col-sm-6 col-lg-3">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80"
+                                    alt="Cena de RPG de ação com personagem em ambiente sombrio">
+                                <span class="card-genero">RPG</span>
+                                <span class="card-rating">⭐ 9.4</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Shadow Realm</h3>
+                                <p class="card-text">Uma jornada épica por mundos sombrios com sistema de combate fluido
+                                    e narrativa impactante.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                    <span class="badge-plat">XSX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="col-sm-6 col-lg-3">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80"
+                                    alt="Jogo de corrida com veículos futuristas em alta velocidade">
+                                <span class="card-genero">Racing</span>
+                                <span class="card-rating">⭐ 8.8</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Turbo Neon</h3>
+                                <p class="card-text">Corridas frenéticas em pistas futuristas neon. Personalize seu
+                                    veículo e domine os rankings globais.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="col-sm-6 col-lg-3">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&q=80"
+                                    alt="Batalha épica em jogo de estratégia com exércitos medievais">
+                                <span class="card-genero">Estratégia</span>
+                                <span class="card-rating">⭐ 9.1</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Iron Conquest</h3>
+                                <p class="card-text">Construa seu império, forme alianças e leve seu exército à vitória
+                                    nesta estratégia profunda.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="col-sm-6 col-lg-3">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=600&q=80"
+                                    alt="Personagem em jogo de aventura em mundo aberto futurista">
+                                <span class="card-genero">Aventura</span>
+                                <span class="card-rating">⭐ 9.6</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Void Walker</h3>
+                                <p class="card-text">Explore planetas imensos, descubra civilizações perdidas e enfrente
+                                    criaturas alienígenas únicas.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                    <span class="badge-plat">XSX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CHAMADA GALERIA ===== -->
+        <section class="sec-chamada-galeria">
+            <div class="container">
+                <span class="sec-label">Não perca nada</span>
+                <h2 class="sec-titulo">Novidades &amp; <span class="titulo-gradiente">Lançamentos</span></h2>
+                <p class="sec-subtitulo">Confira a galeria completa com os jogos mais esperados, análises detalhadas e
+                    categorias para todos os gostos.</p>
+                <a href="galeria.html" class="btn-neon">Acessar Galeria</a>
+            </div>
+        </section>
+
+        <!-- ===== CHAMADA CONTATO ===== -->
+        <section class="sec-chamada-contato">
+            <div class="container">
+                <span class="sec-label">Fale com a gente</span>
+                <h2 class="sec-titulo">Entre na <span class="titulo-gradiente">Comunidade</span></h2>
+                <p class="sec-subtitulo">Tem sugestões, quer fazer parceria ou só quer bater um papo sobre games? Nossa
+                    equipe está pronta para te responder.</p>
+                <a href="contato.html" class="btn-outline-neon">Entrar em Contato</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="rodape-brand">GAME<span>ZONE</span></div>
+                    <p class="rodape-desc">Seu portal definitivo de games: análises, lançamentos e a melhor comunidade
+                        gamer do Brasil.</p>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <p class="rodape-titulo">Navegação</p>
+                    <ul class="rodape-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <p class="rodape-titulo">Projeto</p>
+                    <div class="rodape-alunos">
+                        <p>AF - Linguagens de Programação</p>
+                        <p>João Pedro P. Martins — RA: 251530</p>
+                        <p>Vinícius Nucci Galvão — RA: 252127</p>
+                        <p>Prof. Abimael de Oliveira</p>
+                        <p>2026 — 3º Semestre</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <p class="rodape-titulo">Turma</p>
+                    <div class="rodape-alunos">
+                        <p>Disciplina: Linguagens de Programação</p>
+                        <p>Entrega: 07/06/2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="rodape-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center">
+                <p>© 2026 GameZone Arena — Projeto acadêmico sem fins comerciais.</p>
+                <div class="d-flex gap-3">
+                    <a href="index.html">Home</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button id="btnTopo" class="btn-topo" title="Voltar ao topo">↑</button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS próprio -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

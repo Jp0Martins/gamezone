@@ -1,0 +1,1027 @@
+/*
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: GameZone Arena - Portal de Games
+Aluno 1: João Pedro Pereira Martins - RA: 251530
+Aluno 2: Vinícius Nucci Galvão - RA: 252127
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+*/
+
+/* ================================================
+   VARIÁVEIS E RESET
+================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&display=swap');
+
+:root {
+    --cor-primaria: #00f5a0;
+    --cor-secundaria: #7b2fff;
+    --cor-accent: #ff2d78;
+    --cor-fundo: #0a0a0f;
+    --cor-fundo2: #111118;
+    --cor-card: #16161e;
+    --cor-borda: #2a2a3a;
+    --cor-texto: #e8e8f0;
+    --cor-texto-muted: #8888aa;
+    --espacamento-padrao: 2rem;
+    --radius: 8px;
+    --sombra-neon: 0 0 20px rgba(0, 245, 160, 0.3);
+    --sombra-roxo: 0 0 20px rgba(123, 47, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding-top: 72px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 70px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================================================
+   NAVBAR
+================================================ */
+.navbar {
+    background-color: rgba(10, 10, 15, 0.95) !important;
+    border-bottom: 1px solid var(--cor-borda);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--cor-primaria) !important;
+    text-transform: uppercase;
+}
+
+.navbar-brand span {
+    color: var(--cor-secundaria);
+}
+
+.nav-link {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cor-texto-muted) !important;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--cor-primaria);
+    transition: width 0.3s ease;
+    box-shadow: var(--sombra-neon);
+}
+
+.nav-link:hover,
+.nav-link.ativo-link {
+    color: var(--cor-primaria) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.ativo-link::after {
+    width: 60%;
+}
+
+.navbar-toggler {
+    border-color: var(--cor-borda) !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1) brightness(0.5) sepia(1) hue-rotate(100deg) saturate(5);
+}
+
+/* ================================================
+   CARROSSEL
+================================================ */
+.carousel-section {
+    padding: 0;
+}
+
+.carousel-item {
+    height: 85vh;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+}
+
+.carousel-caption {
+    bottom: 50%;
+    transform: translateY(50%);
+    text-align: left;
+    left: 8%;
+    right: 8%;
+}
+
+.carousel-caption h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 0 30px rgba(0, 245, 160, 0.5);
+    margin-bottom: 1rem;
+    animation: slideInLeft 0.7s ease;
+}
+
+.carousel-caption p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--cor-texto-muted);
+    max-width: 550px;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-caption .badge-platform {
+    display: inline-block;
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption .btn-ver-jogo {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 10px 28px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.carousel-caption .btn-ver-jogo:hover {
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    box-shadow: var(--sombra-neon);
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 30px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    opacity: 0.4;
+    border-radius: 0;
+    border: none;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    box-shadow: var(--sombra-neon);
+}
+
+/* ================================================
+   SEÇÃO APRESENTAÇÃO
+================================================ */
+.sec-apresentacao {
+    background-color: var(--cor-fundo2);
+    text-align: center;
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.sec-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.sec-titulo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.2rem;
+    color: #fff;
+}
+
+.titulo-gradiente {
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sec-subtitulo {
+    color: var(--cor-texto-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Estatísticas */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-numero {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cor-texto-muted);
+}
+
+/* ================================================
+   SEÇÃO DESTAQUES / CARDS
+================================================ */
+.sec-destaques {
+    background-color: var(--cor-fundo);
+}
+
+.card-jogo {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    height: 100%;
+}
+
+.card-jogo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--sombra-neon);
+    border-color: var(--cor-primaria);
+}
+
+.card-jogo .card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.card-jogo .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-jogo:hover .card-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.card-genero {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--cor-secundaria);
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+
+.card-rating {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(10, 10, 15, 0.85);
+    color: var(--cor-primaria);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 3px 10px;
+    border: 1px solid var(--cor-primaria);
+}
+
+.card-jogo .card-body {
+    padding: 1.2rem;
+    background: var(--cor-card);
+}
+
+.card-jogo .card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+
+.card-jogo .card-text {
+    font-size: 0.88rem;
+    color: var(--cor-texto-muted);
+    line-height: 1.6;
+}
+
+.card-plataformas {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.badge-plat {
+    font-size: 0.7rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-muted);
+    text-transform: uppercase;
+}
+
+/* ================================================
+   SEÇÃO CHAMADA GALERIA
+================================================ */
+.sec-chamada-galeria {
+    background: linear-gradient(135deg, var(--cor-fundo2) 0%, #1a0a2e 100%);
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sec-chamada-galeria::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(123, 47, 255, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ================================================
+   SEÇÃO CHAMADA CONTATO
+================================================ */
+.sec-chamada-contato {
+    background-color: var(--cor-fundo2);
+    text-align: center;
+}
+
+/* ================================================
+   BOTÕES
+================================================ */
+.btn-neon {
+    display: inline-block;
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn-neon:hover {
+    background: var(--cor-fundo);
+    color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px var(--cor-primaria), var(--sombra-neon);
+}
+
+.btn-outline-neon {
+    display: inline-block;
+    background: transparent;
+    color: var(--cor-primaria);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    text-transform: uppercase;
+    border: 2px solid var(--cor-primaria);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn-outline-neon:hover {
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    box-shadow: var(--sombra-neon);
+}
+
+.btn-roxo {
+    display: inline-block;
+    background: var(--cor-secundaria);
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn-roxo:hover {
+    background: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    box-shadow: 0 0 0 2px var(--cor-secundaria), var(--sombra-roxo);
+}
+
+/* ================================================
+   RODAPÉ
+================================================ */
+.rodape {
+    background-color: #07070d;
+    border-top: 1px solid var(--cor-borda);
+    padding: 50px 0 20px;
+}
+
+.rodape-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.rodape-brand span {
+    color: var(--cor-secundaria);
+}
+
+.rodape-desc {
+    font-size: 0.88rem;
+    color: var(--cor-texto-muted);
+    margin-bottom: 1.5rem;
+    max-width: 280px;
+}
+
+.rodape-titulo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.rodape-links {
+    list-style: none;
+    padding: 0;
+}
+
+.rodape-links li {
+    margin-bottom: 0.5rem;
+}
+
+.rodape-links a {
+    color: var(--cor-texto-muted);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.rodape-bottom {
+    border-top: 1px solid var(--cor-borda);
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    font-size: 0.82rem;
+    color: var(--cor-texto-muted);
+}
+
+.rodape-alunos {
+    font-size: 0.82rem;
+    color: var(--cor-texto-muted);
+    line-height: 1.8;
+}
+
+/* ================================================
+   BOTÃO VOLTAR AO TOPO
+================================================ */
+.btn-topo {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 999;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.btn-topo.mostrar {
+    display: flex;
+}
+
+.btn-topo:hover {
+    background: var(--cor-secundaria);
+    box-shadow: var(--sombra-roxo);
+    transform: translateY(-3px);
+}
+
+/* ================================================
+   BOTÃO TEMA ESCURO / CLARO
+================================================ */
+.btn-tema {
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-muted);
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-tema:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+/* Modo claro */
+body.tema-claro {
+    --cor-fundo: #f0f2f5;
+    --cor-fundo2: #e4e7ed;
+    --cor-card: #ffffff;
+    --cor-borda: #cccfe0;
+    --cor-texto: #1a1a2e;
+    --cor-texto-muted: #555570;
+}
+
+body.tema-claro .navbar {
+    background-color: rgba(240, 242, 245, 0.97) !important;
+}
+
+body.tema-claro .rodape {
+    background-color: #d8dbe5;
+}
+
+/* ================================================
+   GALERIA PAGE
+================================================ */
+.page-hero {
+    background: linear-gradient(135deg, var(--cor-fundo2) 0%, #130a25 100%);
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: center;
+}
+
+.filtros-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.btn-filtro {
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-muted);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.btn-filtro:hover,
+.btn-filtro.ativo {
+    background: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+.sec-galeria {
+    background-color: var(--cor-fundo);
+}
+
+.sec-lancamentos {
+    background-color: var(--cor-fundo2);
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* Card galeria destaque */
+.card-destaque-js {
+    transform: scale(1.03);
+    transition: 0.3s ease;
+    border-color: var(--cor-primaria) !important;
+    box-shadow: var(--sombra-neon) !important;
+}
+
+/* Card lançamento */
+.card-lancamento {
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card-lancamento:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.4), var(--sombra-roxo);
+}
+
+.card-lancamento .lancamento-img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-lancamento .lancamento-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-lancamento:hover .lancamento-img img {
+    transform: scale(1.05);
+}
+
+.card-lancamento .lancamento-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-lancamento {
+    font-size: 0.75rem;
+    color: var(--cor-accent);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.lancamento-titulo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.lancamento-desc {
+    font-size: 0.84rem;
+    color: var(--cor-texto-muted);
+    flex: 1;
+}
+
+/* ================================================
+   CONTATO PAGE
+================================================ */
+.sec-contato {
+    background-color: var(--cor-fundo);
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.info-icone {
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    min-width: 32px;
+}
+
+.info-titulo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cor-texto-muted);
+    margin-bottom: 0.2rem;
+}
+
+.info-valor {
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.rede-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-muted);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.rede-btn:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    box-shadow: var(--sombra-neon);
+}
+
+/* Formulário */
+.form-contato .form-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cor-texto-muted);
+    margin-bottom: 0.4rem;
+}
+
+.form-contato .form-control,
+.form-contato .form-select {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--radius);
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-contato .form-control:focus,
+.form-contato .form-select:focus {
+    background-color: var(--cor-card);
+    border-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    box-shadow: 0 0 0 3px rgba(0, 245, 160, 0.15);
+}
+
+.form-contato .form-control::placeholder {
+    color: var(--cor-texto-muted);
+    opacity: 0.6;
+}
+
+.form-contato select option {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+}
+
+.mapa-wrapper {
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.mapa-wrapper iframe {
+    filter: invert(0.88) hue-rotate(180deg) saturate(0.6);
+    display: block;
+}
+
+body.tema-claro .mapa-wrapper iframe {
+    filter: none;
+}
+
+/* Alerta de sucesso */
+.alerta-sucesso {
+    display: none;
+    background: rgba(0, 245, 160, 0.1);
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.alerta-sucesso.show {
+    display: block;
+    animation: aparecer 0.4s ease;
+}
+
+/* ================================================
+   ANIMAÇÕES
+================================================ */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulsar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.animado {
+    animation: aparecer 0.7s ease both;
+}
+
+.animado-delay-1 { animation-delay: 0.1s; }
+.animado-delay-2 { animation-delay: 0.2s; }
+.animado-delay-3 { animation-delay: 0.3s; }
+
+/* ================================================
+   RESPONSIVIDADE
+================================================ */
+@media (max-width: 992px) {
+    .carousel-item {
+        height: 65vh;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(10, 10, 15, 0.98);
+        padding: 1rem;
+        border-top: 1px solid var(--cor-borda);
+        margin-top: 0.5rem;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 0;
+    }
+
+    .carousel-item {
+        height: 55vh;
+        min-height: 360px;
+    }
+
+    .carousel-caption {
+        left: 5%;
+        right: 5%;
+    }
+
+    .stats-grid {
+        gap: 2rem;
+    }
+
+    .rodape .row > div {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 65px;
+    }
+
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .carousel-caption p {
+        display: none;
+    }
+
+    .stats-grid {
+        gap: 1.5rem;
+    }
+
+    .stat-numero {
+        font-size: 1.8rem;
+    }
+}
