@@ -1,0 +1,345 @@
+<!--
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: GameZone Arena - Portal de Games
+Aluno 1: João Pedro Pereira Martins - RA: 251530
+Aluno 2: Vinícius Nucci Galvão - RA: 252127
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone Arena - Contato</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">GAME<span>ZONE</span></a>
+
+                <div class="d-flex align-items-center gap-2 order-lg-last">
+                    <button id="btnTema" class="btn-tema" title="Alternar tema">🌙</button>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeria.html">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== PAGE HERO ===== -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="sec-label">Fale Conosco</span>
+                <h1 class="sec-titulo">Entre em <span class="titulo-gradiente">Contato</span></h1>
+                <p class="sec-subtitulo">Tem dúvidas, sugestões ou quer fazer uma parceria? Nossa equipe está pronta
+                    para te responder. Preencha o formulário abaixo.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO CONTATO ===== -->
+        <section class="sec-contato">
+            <div class="container">
+                <div class="row g-5">
+
+                    <!-- Coluna de informações -->
+                    <div class="col-lg-4">
+                        <span class="sec-label">Informações</span>
+                        <h2 class="sec-titulo" style="font-size:1.6rem;">Nossa <span
+                                class="titulo-gradiente">Sede</span></h2>
+                        <p style="color: var(--cor-texto-muted); font-size: 0.9rem; margin-bottom: 2rem;">
+                            Estamos localizados no coração de São Paulo, prontos para atender sua mensagem de segunda a
+                            sexta.
+                        </p>
+
+                        <div class="contato-info">
+
+                            <div class="info-item">
+                                <span class="info-icone">📍</span>
+                                <div>
+                                    <p class="info-titulo">Endereço</p>
+                                    <p class="info-valor">Av. Paulista, 1578 — Bela Vista<br>São Paulo — SP, 01310-200
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="info-icone">📞</span>
+                                <div>
+                                    <p class="info-titulo">Telefone</p>
+                                    <p class="info-valor">(11) 9 9999-8888</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="info-icone">✉️</span>
+                                <div>
+                                    <p class="info-titulo">E-mail</p>
+                                    <p class="info-valor">contato@gamezonearena.com.br</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="info-icone">🕐</span>
+                                <div>
+                                    <p class="info-titulo">Horário de Atendimento</p>
+                                    <p class="info-valor">Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Redes Sociais -->
+                        <div class="mt-4">
+                            <p class="info-titulo">Redes Sociais</p>
+                            <div class="redes-sociais">
+                                <a href="#" class="rede-btn" title="Instagram" aria-label="Instagram da GameZone">📷</a>
+                                <a href="#" class="rede-btn" title="Twitter / X" aria-label="Twitter da GameZone">🐦</a>
+                                <a href="#" class="rede-btn" title="YouTube" aria-label="YouTube da GameZone">▶️</a>
+                                <a href="#" class="rede-btn" title="Discord" aria-label="Discord da GameZone">💬</a>
+                                <a href="#" class="rede-btn" title="Twitch" aria-label="Twitch da GameZone">🎮</a>
+                            </div>
+                        </div>
+
+                        <!-- Mapa -->
+                        <div class="mapa-wrapper mt-4">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1977697748!2d-46.65590608502204!3d-23.56139798468178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201578%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1649080000000!5m2!1spt-BR!2sbr"
+                                width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa com localização da GameZone Arena na Av. Paulista, São Paulo">
+                            </iframe>
+                        </div>
+
+                    </div>
+
+                    <!-- Coluna do formulário -->
+                    <div class="col-lg-8">
+                        <span class="sec-label">Envie sua mensagem</span>
+                        <h2 class="sec-titulo" style="font-size:1.6rem; margin-bottom: 1.5rem;">Preencha o <span
+                                class="titulo-gradiente">Formulário</span></h2>
+
+                        <form class="form-contato" id="formContato" action="#" method="post" novalidate>
+
+                            <div class="row g-3">
+
+                                <!-- Nome -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="nome" class="form-label">Nome Completo *</label>
+                                        <input type="text" id="nome" name="nome" class="form-control"
+                                            placeholder="Seu nome completo" required minlength="3" aria-required="true">
+                                    </div>
+                                </div>
+
+                                <!-- E-mail -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail *</label>
+                                        <input type="email" id="email" name="email" class="form-control"
+                                            placeholder="seu@email.com" required aria-required="true">
+                                    </div>
+                                </div>
+
+                                <!-- Telefone -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="telefone" class="form-label">Telefone</label>
+                                        <input type="tel" id="telefone" name="telefone" class="form-control"
+                                            placeholder="(00) 00000-0000" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}">
+                                    </div>
+                                </div>
+
+                                <!-- Assunto -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="assunto" class="form-label">Assunto *</label>
+                                        <select id="assunto" name="assunto" class="form-select" required
+                                            aria-required="true">
+                                            <option value="">Selecione uma opção</option>
+                                            <option value="duvida">Dúvida</option>
+                                            <option value="sugestao">Sugestão de jogo</option>
+                                            <option value="parceria">Parceria / Publicidade</option>
+                                            <option value="imprensa">Imprensa</option>
+                                            <option value="esports">E-Sports / Torneio</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Plataforma preferida -->
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Plataforma Preferida</label>
+                                        <div class="d-flex gap-4 flex-wrap" style="padding-top: 0.3rem;">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="plataforma"
+                                                    id="plat-pc" value="PC">
+                                                <label class="form-check-label" for="plat-pc"
+                                                    style="color: var(--cor-texto);">PC</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="plataforma"
+                                                    id="plat-ps5" value="PS5">
+                                                <label class="form-check-label" for="plat-ps5"
+                                                    style="color: var(--cor-texto);">PlayStation 5</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="plataforma"
+                                                    id="plat-xbox" value="Xbox">
+                                                <label class="form-check-label" for="plat-xbox"
+                                                    style="color: var(--cor-texto);">Xbox</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="plataforma"
+                                                    id="plat-mobile" value="Mobile">
+                                                <label class="form-check-label" for="plat-mobile"
+                                                    style="color: var(--cor-texto);">Mobile</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="plataforma"
+                                                    id="plat-switch" value="Switch">
+                                                <label class="form-check-label" for="plat-switch"
+                                                    style="color: var(--cor-texto);">Nintendo Switch</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mensagem -->
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="mensagem" class="form-label">Mensagem *</label>
+                                        <textarea id="mensagem" name="mensagem" class="form-control" rows="6"
+                                            placeholder="Escreva sua mensagem aqui..." required minlength="10"
+                                            aria-required="true"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Checkbox newsletter -->
+                                <div class="col-12">
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="newsletter"
+                                            name="newsletter" value="sim">
+                                        <label class="form-check-label" for="newsletter"
+                                            style="color: var(--cor-texto-muted); font-size: 0.88rem;">
+                                            Quero receber novidades e lançamentos da GameZone Arena por e-mail.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Botões -->
+                                <div class="col-12">
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <button type="submit" class="btn-neon">Enviar Mensagem</button>
+                                        <button type="reset" class="btn-outline-neon">Limpar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <!-- Alerta de sucesso -->
+                        <div id="alertaSucesso" class="alerta-sucesso" role="alert" aria-live="polite">
+                            ✅ Mensagem enviada com sucesso! Em breve nossa equipe entrará em contato.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="rodape-brand">GAME<span>ZONE</span></div>
+                    <p class="rodape-desc">Seu portal definitivo de games: análises, lançamentos e a melhor comunidade
+                        gamer do Brasil.</p>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <p class="rodape-titulo">Navegação</p>
+                    <ul class="rodape-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <p class="rodape-titulo">Projeto</p>
+                    <div class="rodape-alunos">
+                        <p>AF - Linguagens de Programação</p>
+                        <p>João Pedro P. Martins — RA: 251530</p>
+                        <p>Vinícius Nucci Galvão — RA: 252127</p>
+                        <p>Prof. Abimael de Oliveira</p>
+                        <p>2026 — 3º Semestre</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <p class="rodape-titulo">Turma</p>
+                    <div class="rodape-alunos">
+                        <p>Disciplina: Linguagens de Programação</p>
+                        <p>Entrega: 07/06/2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="rodape-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center">
+                <p>© 2026 GameZone Arena — Projeto acadêmico sem fins comerciais.</p>
+                <div class="d-flex gap-3">
+                    <a href="index.html">Home</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button id="btnTopo" class="btn-topo" title="Voltar ao topo">↑</button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS próprio -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
