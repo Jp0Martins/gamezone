@@ -1,0 +1,432 @@
+<!--
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: GameZone Arena - Portal de Games
+Aluno 1: João Pedro Pereira Martins - RA: 251530
+Aluno 2: Vinícius Nucci Galvão - RA: 252127
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone Arena - Galeria</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">GAME<span>ZONE</span></a>
+
+                <div class="d-flex align-items-center gap-2 order-lg-last">
+                    <button id="btnTema" class="btn-tema" title="Alternar tema">🌙</button>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeria.html">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== PAGE HERO ===== -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="sec-label">Explorar</span>
+                <h1 class="sec-titulo">Galeria de <span class="titulo-gradiente">Novidades</span></h1>
+                <p class="sec-subtitulo">Descubra os melhores jogos por categoria, acompanhe os lançamentos mais
+                    esperados e fique por dentro de tudo que está movimentando o universo gamer.</p>
+            </div>
+        </section>
+
+        <!-- ===== GALERIA PRINCIPAL ===== -->
+        <section class="sec-galeria">
+            <div class="container">
+
+                <!-- Filtros de categoria -->
+                <div class="filtros-bar" role="group" aria-label="Filtros de categoria">
+                    <button class="btn-filtro ativo" data-filtro="todos">Todos</button>
+                    <button class="btn-filtro" data-filtro="rpg">RPG</button>
+                    <button class="btn-filtro" data-filtro="acao">Ação</button>
+                    <button class="btn-filtro" data-filtro="estrategia">Estratégia</button>
+                    <button class="btn-filtro" data-filtro="esportes">Esportes</button>
+                    <button class="btn-filtro" data-filtro="aventura">Aventura</button>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- Card 1 - RPG -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="rpg">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80"
+                                    alt="Personagem de RPG em dungeon sombrio com tochas acesas">
+                                <span class="card-genero">RPG</span>
+                                <span class="card-rating">⭐ 9.4</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Shadow Realm</h2>
+                                <p class="card-text">Uma jornada épica por mundos sombrios. Sistema de combate fluido
+                                    com árvore de habilidades profunda e narrativa impactante com múltiplos finais.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                    <span class="badge-plat">XSX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 - Ação -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="acao">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?w=600&q=80"
+                                    alt="Cena de ação intensa com explosões e personagens em combate">
+                                <span class="card-genero">Ação</span>
+                                <span class="card-rating">⭐ 8.9</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Blaze Protocol</h2>
+                                <p class="card-text">Shooter tático em terceira pessoa com mecânicas de cobertura
+                                    avançadas, modo cooperativo e campanha para um jogador de 20 horas.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 - Estratégia -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="estrategia">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&q=80"
+                                    alt="Mapa estratégico com unidades militares em movimento">
+                                <span class="card-genero">Estratégia</span>
+                                <span class="card-rating">⭐ 9.1</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Iron Conquest</h2>
+                                <p class="card-text">Construa impérios, forme alianças e leve exércitos à vitória. Um 4X
+                                    de estratégia com profundidade política e diplomacia dinâmica.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 - Esportes -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="esportes">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80"
+                                    alt="Partida de futebol virtual com estádio iluminado e torcida">
+                                <span class="card-genero">Esportes</span>
+                                <span class="card-rating">⭐ 8.5</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Strike League</h2>
+                                <p class="card-text">O simulador esportivo mais realista do mercado. Física aprimorada,
+                                    modo carreira profundo e competições online com milhares de jogadores.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                    <span class="badge-plat">XSX</span>
+                                    <span class="badge-plat">Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 - Aventura -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="aventura">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=600&q=80"
+                                    alt="Exploradora em ruínas antigas em um mundo aberto misterioso">
+                                <span class="card-genero">Aventura</span>
+                                <span class="card-rating">⭐ 9.6</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Void Walker</h2>
+                                <p class="card-text">Explore planetas imensos, descubra civilizações perdidas e enfrente
+                                    criaturas alienígenas em um mundo aberto deslumbrante com 60h de conteúdo.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                    <span class="badge-plat">XSX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 - RPG -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="rpg">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=600&q=80"
+                                    alt="Masmorra de fantasia com cristais luminosos e personagens mágicos">
+                                <span class="card-genero">RPG</span>
+                                <span class="card-rating">⭐ 9.0</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Crystal Dungeon</h2>
+                                <p class="card-text">Um RPG de masmorras com geração procedural infinita, sistema de
+                                    crafting robusto e co-op local para até 4 jogadores.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">Switch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 7 - Ação -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="acao">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80"
+                                    alt="Nave espacial em batalha épica no espaço com lasers">
+                                <span class="card-genero">Ação</span>
+                                <span class="card-rating">⭐ 8.7</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Star Siege</h2>
+                                <p class="card-text">Batalhas espaciais frenéticas com centenas de naves na tela.
+                                    Personalize seu fighter e dispute territórios galácticos com jogadores ao redor do
+                                    mundo.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 8 - Estratégia -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="estrategia">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=600&q=80"
+                                    alt="Tabuleiro digital com peças de xadrez futuristas">
+                                <span class="card-genero">Estratégia</span>
+                                <span class="card-rating">⭐ 8.3</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Apex Command</h2>
+                                <p class="card-text">RTS clássico reimaginado com gráficos modernos. Controle recursos,
+                                    construa bases e destrua seus inimigos em mapas enormes e detalhados.</p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 9 - Aventura -->
+                    <article class="col-sm-6 col-lg-4" data-categoria="aventura">
+                        <div class="card-jogo">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&q=80"
+                                    alt="Aventureiro explorando caverna com pedras preciosas iluminadas">
+                                <span class="card-genero">Aventura</span>
+                                <span class="card-rating">⭐ 9.2</span>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">Echo Depths</h2>
+                                <p class="card-text">Mergulhe em cavernas subaquáticas imensas, resolva puzzles
+                                    ambientais e desvende os mistérios de uma civilização submersa esquecida pelo tempo.
+                                </p>
+                                <div class="card-plataformas">
+                                    <span class="badge-plat">PC</span>
+                                    <span class="badge-plat">PS5</span>
+                                    <span class="badge-plat">Switch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO LANÇAMENTOS ===== -->
+        <section class="sec-lancamentos">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="sec-label">Em Breve</span>
+                    <h2 class="sec-titulo">Próximos <span class="titulo-gradiente">Lançamentos</span></h2>
+                    <p class="sec-subtitulo">Fique de olho nos títulos mais aguardados que chegam em breve nas
+                        plataformas.</p>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- Lançamento 1 -->
+                    <article class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card-lancamento">
+                            <figure class="lancamento-img">
+                                <img src="https://images.unsplash.com/photo-1592155931584-901ac15763e3?w=500&q=80"
+                                    alt="Jogador competitivo com headset em torneio de e-sports">
+                                <figcaption class="visually-hidden">Imagem do jogo Arena Masters</figcaption>
+                            </figure>
+                            <div class="lancamento-body">
+                                <span class="data-lancamento">🗓 15 Jul 2025</span>
+                                <h3 class="lancamento-titulo">Arena Masters</h3>
+                                <p class="lancamento-desc">O próximo grande jogo de batalha arena competitiva. Ranking
+                                    global, personagens únicos e temporadas de longa duração.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Lançamento 2 -->
+                    <article class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card-lancamento">
+                            <figure class="lancamento-img">
+                                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80"
+                                    alt="Setup gamer avançado com múltiplos monitores RGB">
+                                <figcaption class="visually-hidden">Imagem do jogo Neon City</figcaption>
+                            </figure>
+                            <div class="lancamento-body">
+                                <span class="data-lancamento">🗓 22 Ago 2025</span>
+                                <h3 class="lancamento-titulo">Neon City</h3>
+                                <p class="lancamento-desc">RPG cyberpunk com mundo aberto imenso, cyberpunks,
+                                    corporações e um sistema de escolhas que muda o destino da cidade.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Lançamento 3 -->
+                    <article class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card-lancamento">
+                            <figure class="lancamento-img">
+                                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&q=80"
+                                    alt="Corrida de karts coloridos em pista temática">
+                                <figcaption class="visually-hidden">Imagem do jogo Turbo Kart X</figcaption>
+                            </figure>
+                            <div class="lancamento-body">
+                                <span class="data-lancamento">🗓 05 Set 2025</span>
+                                <h3 class="lancamento-titulo">Turbo Kart X</h3>
+                                <p class="lancamento-desc">A corrida de karts definitiva com pistas temáticas
+                                    inesquecíveis, power-ups caóticos e modo online para 16 jogadores simultâneos.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Lançamento 4 -->
+                    <article class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card-lancamento">
+                            <figure class="lancamento-img">
+                                <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=500&q=80"
+                                    alt="Herói em armadura futurista com arma de energia brilhante">
+                                <figcaption class="visually-hidden">Imagem do jogo Omega Force</figcaption>
+                            </figure>
+                            <div class="lancamento-body">
+                                <span class="data-lancamento">🗓 30 Out 2025</span>
+                                <h3 class="lancamento-titulo">Omega Force</h3>
+                                <p class="lancamento-desc">Hack and slash frenético com combos espetaculares, direção de
+                                    arte impressionante e boss fights épicos para testar seus reflexos.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="rodape-brand">GAME<span>ZONE</span></div>
+                    <p class="rodape-desc">Seu portal definitivo de games: análises, lançamentos e a melhor comunidade
+                        gamer do Brasil.</p>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <p class="rodape-titulo">Navegação</p>
+                    <ul class="rodape-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <p class="rodape-titulo">Projeto</p>
+                    <div class="rodape-alunos">
+                        <p>AF - Linguagens de Programação</p>
+                        <p>João Pedro P. Martins — RA: 251530</p>
+                        <p>Vinícius Nucci Galvão — RA: 252127</p>
+                        <p>Prof. Abimael de Oliveira</p>
+                        <p>2025 — 3º Semestre</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <p class="rodape-titulo">Turma</p>
+                    <div class="rodape-alunos">
+                        <p>Disciplina: Linguagens de Programação</p>
+                        <p>Entrega: 07/06/2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="rodape-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center">
+                <p>© 2026 GameZone Arena — Projeto acadêmico sem fins comerciais.</p>
+                <div class="d-flex gap-3">
+                    <a href="index.html">Home</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button id="btnTopo" class="btn-topo" title="Voltar ao topo">↑</button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS próprio -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
